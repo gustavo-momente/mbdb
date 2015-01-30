@@ -1,0 +1,1 @@
+rsync -a -v html ~/public_html/mov
