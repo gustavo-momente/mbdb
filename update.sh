@@ -1,1 +1,1 @@
-rsync -a -v mov_html ~/public_html/mov_html
+rsync -a -v mov_html ~/public_html
