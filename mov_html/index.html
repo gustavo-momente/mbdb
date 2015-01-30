@@ -4,8 +4,13 @@
 	
 	<script type="text/javascript" src="vendor/jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="vendor/jquery.dynatable.js"></script>
+	<link rel="stylesheet" type="text/css" href="vendor/jquery.dynatable.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-	
+    <!-- <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/application.css" /> -->
+    <!-- <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/pygments.css" /> -->
+    <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/share.css" />
+ 	
 </head>
 
 <body>
@@ -17,6 +22,7 @@
 	    	<th>Format</th>
 	    	<th>Release Group</th>
 	    	<th>File Type</th>
+	    	<th>File Name</th>
 	  	</thead>
 	  	
 	  	<tbody></tbody>
@@ -31,15 +37,14 @@
 		success: function(result)
 			{
 				console.log( "success" );
+				$('#my-tab').dynatable(
+				{
+					dataset: { records: result}
+				}
+				);
 			}
 		});
 		// var myRecords = JSON.parse(mv_db_raw['responseText']);
-	
-		$('#my-tab').dynatable(
-			{
-				dataset: { records: mv_db_raw['responseJSON']}
-			}
-			);
 		console.log( "success 2" );
 	</script>
 
