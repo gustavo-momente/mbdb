@@ -1,25 +1,37 @@
 <html>
 <head>
-	<title>jQuery Hello World</title>
+	<title>jQuery test</title>
 	
-	<script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+	<script type="text/javascript" src="vendor/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="vendor/jquery.dynatable.js"></script>
+
 	
 </head>
 
 <body>
-	
+		
+	<table id="my-tab">
+		<thead>
+	    	<th>Movie</th>
+	    	<th>Resolution</th>
+	    	<th>Format</th>
+	    	<th>Release Group</th>
+	    	<th>File Type</th>
+	  	</thead>
+	  	
+	  	<tbody></tbody>
+	</table>
+
 	<script type="text/javascript">
-	
-	$(document).ready(function(){
-		$("#msgid").html("This is Hello World by JQuery");
-	});
-	
+		var mv_db = $.getJSON( "json_data/mvdata.json", function() {console.log( "success" );});
+		$('#my-tab').dynatable(
+			{
+				dataset: { records: mv_db}
+			}
+			);
 	</script>
-	
-	This is Hello World by HTML
-	
-	<div id="msgid">
-	</div>
-	
+
+
 </body>
 </html>
+
