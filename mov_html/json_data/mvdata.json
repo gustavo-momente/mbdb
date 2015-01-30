@@ -1,1 +1,72 @@
-[{"Movie": "Eight And A Half", "Release Group": "DiMENSiON[PublicHD]", "Format": "BluRay", "Resolution": "720p", "File Type": "mkv"}, {"Movie": "Four Lions", "Release Group": "", "Format": "BluRay", "Resolution": "720p", "File Type": "mkv"}, {"Movie": "Frank", "Release Group": "JYK", "Format": "BluRay", "Resolution": "1080p", "File Type": "mkv"}, {"Movie": "Kid-Thing", "Release Group": "WEBiOS", "Format": "WEB-DL", "Resolution": "720p", "File Type": "mkv"}, {"Movie": "La Dolce Vita", "Release Group": "vHD", "Format": "BluRay", "Resolution": "720p", "File Type": "mkv"}, {"Movie": "tabu", "Release Group": "publichd", "Format": "BluRay", "Resolution": "720p", "File Type": "mkv"}, {"Movie": "La leggenda del pianista sull'oceano", "Release Group": "", "Format": "BluRay", "Resolution": "720p", "File Type": "mkv"}, {"Movie": "The Fountain", "Release Group": "anoXmous", "Format": "BluRay", "Resolution": "1080p", "File Type": "mp4"}, {"Movie": "The Lego Movie", "Release Group": "YIFY", "Format": "BluRay", "Resolution": "1080p", "File Type": "mp4"}, {"Movie": "Tuesday After Christmas", "Release Group": "WEBiOS", "Format": "WEB-DL", "Resolution": "720p", "File Type": "mkv"}]
+[
+    {
+        "fileType": "mkv", 
+        "format": "BluRay", 
+        "movie": "Eight And A Half", 
+        "releaseGroup": "DiMENSiON[PublicHD]", 
+        "resolution": "720p"
+    }, 
+    {
+        "fileType": "mkv", 
+        "format": "BluRay", 
+        "movie": "Four Lions", 
+        "releaseGroup": "", 
+        "resolution": "720p"
+    }, 
+    {
+        "fileType": "mkv", 
+        "format": "BluRay", 
+        "movie": "Frank", 
+        "releaseGroup": "JYK", 
+        "resolution": "1080p"
+    }, 
+    {
+        "fileType": "mkv", 
+        "format": "WEB-DL", 
+        "movie": "Kid-Thing", 
+        "releaseGroup": "WEBiOS", 
+        "resolution": "720p"
+    }, 
+    {
+        "fileType": "mkv", 
+        "format": "BluRay", 
+        "movie": "La Dolce Vita", 
+        "releaseGroup": "vHD", 
+        "resolution": "720p"
+    }, 
+    {
+        "fileType": "mkv", 
+        "format": "BluRay", 
+        "movie": "tabu", 
+        "releaseGroup": "publichd", 
+        "resolution": "720p"
+    }, 
+    {
+        "fileType": "mkv", 
+        "format": "BluRay", 
+        "movie": "La leggenda del pianista sull'oceano", 
+        "releaseGroup": "", 
+        "resolution": "720p"
+    }, 
+    {
+        "fileType": "mp4", 
+        "format": "BluRay", 
+        "movie": "The Fountain", 
+        "releaseGroup": "anoXmous", 
+        "resolution": "1080p"
+    }, 
+    {
+        "fileType": "mp4", 
+        "format": "BluRay", 
+        "movie": "The Lego Movie", 
+        "releaseGroup": "YIFY", 
+        "resolution": "1080p"
+    }, 
+    {
+        "fileType": "mkv", 
+        "format": "WEB-DL", 
+        "movie": "Tuesday After Christmas", 
+        "releaseGroup": "WEBiOS", 
+        "resolution": "720p"
+    }
+]

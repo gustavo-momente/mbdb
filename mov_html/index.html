@@ -23,13 +23,26 @@
 	</table>
 
 	<script type="text/javascript">
-		var mv_db = $.getJSON( "json_data/mvdata.json", function() {console.log( "success" );});
+
+		var mv_db_raw = $.ajax({
+		dataType: "json",
+		url: "json_data/mvdata.json",
+		mimeType: "application/json",
+		success: function(result)
+			{
+				console.log( "success" );
+			}
+		});
+		// var myRecords = JSON.parse(mv_db_raw['responseText']);
+	
 		$('#my-tab').dynatable(
 			{
-				dataset: { records: mv_db}
+				dataset: { records: mv_db_raw['responseJSON']}
 			}
 			);
+		console.log( "success 2" );
 	</script>
+
 
 
 </body>
