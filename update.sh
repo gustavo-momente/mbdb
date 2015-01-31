@@ -1,1 +1,0 @@
-rsync -a -v mov_html ~/public_html
