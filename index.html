@@ -8,6 +8,16 @@
 	<link rel="stylesheet" type="text/css" href="vendor/jquery.dynatable.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <script type="text/javascript">
+	function ulReader(index, li, record) {
+	  // record.thumbnail = $li.find('.thumbnail-image').html();
+	  // record.caption = $caption.html();
+	  // record.label = $caption.find('h3').text();
+	  // record.description = $caption.find('p').text();
+	  // record.color = $li.data('color');
+	  console
+
+    </script>
     <!-- <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/application.css" /> -->
     <!-- <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/pygments.css" /> -->
 <!--     <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/share.css" />
@@ -22,13 +32,17 @@
 		</span>
 		<table id="my-tab" class="table table-bordered">
 			<thead>
-		    	<th>Movie</th>
-		    	<th>Runtime</th>
-		    	<th>Width</th>
-		    	<th>Height</th>
-		    	<th>bitrate Kbps</th>
-	<!-- 	    	<th>Format</th>
-		    	<th>Release Group</th> -->
+		    	<th data-dynatable-column="movieLink">Movie</th>
+		    	<!-- <th>movie Imdb</th> -->
+		    	<!-- <th>id</th> -->
+		    	<th>Rating</th>
+		    	<th data-dynatable-column="runtime">Runtime (min)</th>
+
+		    	<!-- <th>Width</th> -->
+		    	<!-- <th>Height</th> -->
+		    	<th data-dynatable-column="bitrateKbps">bitrate (kbps)</th>
+		    	<!-- <th>Format</th> -->
+		    	<!-- <th>Release Group</th> -->
 		    	<th>File Type</th>
 		    	<th>File Size</th>
 		  	</thead>
@@ -58,12 +72,13 @@
 					dataset: { records: result},
 					features: {
 						paginate: true,
-						recordCount: false,
+						recordCount: true,
 						sorting: true,
 						search: true
 					},
 					inputs: {
-						queries: $('#max-price')
+						queries: $('#max-price'),
+						processingText: 'Loading <img src="/images/loading.gif" />'
 					}
 				});
 			}
