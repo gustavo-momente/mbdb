@@ -43,14 +43,13 @@
 					<a class="navbar-brand" href="#">mvdb</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav navbar-left">
-<!-- 						<li><a href="#">Dashboard</a></li>
+<!-- 					<ul class="nav navbar-nav navbar-left">
+						<li><a href="#">Dashboard</a></li>
 						<li><a href="#">Settings</a></li>
-						<li><a href="#">Profile</a></li> -->
-						<!-- <li><a href="https://github.com/gustavo-momente/mvdb"><img src="images/GitHub.png" style="max-height: 20px"></a></li> -->
-					</ul>
+						<li><a href="#">Profile</a></li>
+					</ul> -->
 					<form class="navbar-form navbar-right">
-						<input id='search' type="text" class="form-control" placeholder="Search...">
+						<input id='search' type="search" class="form-control" placeholder="Search..." data-dynatable-query='search'></input>
 					</form>
 				</div>
 			</div>
@@ -74,7 +73,7 @@
 						<li class="filter-header">Watched: </li>
 						<li class="filter-input">
 							<select id="watched" name="watched" class="form-control">
-								<option  selected="selected"></option>
+								<option>All</option>
 							  <option>True</option>
 							  <option>False</option>
 							</select>
@@ -165,8 +164,8 @@
 								var return_ = (record.watched == parse1);
 								return return_;
 							};
-								})
-					.dynatable(
+						});
+					var dynatable = $('#my-tab').dynatable(
 					{
 						dataset: { records: result, perPageDefault: 20},
 						features: {
@@ -176,14 +175,27 @@
 							search: false
 						},
 						inputs: {
-							queries: $('#search, #min-rating, #max-run, #watched'),
+							queries: $('#search, #min-rating, #max-run'),
 							processingText: 'Loading <img src="images/loading.gif" />'
 						}
+					}).data('dynatable');;
+					$("#watched").change( function() {
+						var value = $(this).val();
+						if (value === "All")
+						{
+							dynatable.queries.remove("watched");
+						}
+						else
+						{
+							dynatable.queries.add("watched", value);
+						}
+						dynatable.process();
 					});
-				// $("#dynatable-per-page-my-tab").addClass("form-control");
+					
+					console.log( "success 3" );
 				}
 			});
-			console.log( "success 2" );
+			
 		</script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 
@@ -191,15 +203,15 @@
 		<script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
 
 		<!-- google analytics -->
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		// <script>
+		// 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		// 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		// 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		// 	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-			ga('create', 'UA-20631914-2', 'auto');
-			ga('send', 'pageview');
-		</script>
+		// 	ga('create', 'UA-20631914-2', 'auto');
+		// 	ga('send', 'pageview');
+		// </script>
 
 	</body>
 </html>
