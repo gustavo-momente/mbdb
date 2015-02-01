@@ -4,7 +4,7 @@ td, th
 	vertical-align:middle;
 }
 th {
-    background: none repeat scroll 0% 0% #006A72;
+    /*background: none repeat scroll 0% 0% #006A72;*/
     color:#FFF;
 }
 tr
@@ -20,6 +20,23 @@ tr
 	vertical-align: baseline;
 }
 
+select#dynatable-per-page-my-tab
+{
+  width: 100px;
+  /*display: block;*/
+  height: 20px;
+  /*padding: 6px 12px;*/
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #555;
+  background-color: #FFF;
+  background-image: none;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  margin-left: 10 px;
+}
 /*
 table 
 {
@@ -45,56 +62,17 @@ table
 	line-height: 20px;
 }
 */
-body{
-	margin:0;
-	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size:14px;
-	line-height:20px;
-	color:#333;
-	background-color:#F5F5F5;
-}
-
-div#movdb
+.dynatable-processing
 {
-	max-width:960px;
-	margin-left: auto ;
-	margin-right: auto ;
-	margin-top: 10%;
-}
-tbody
-{
-    margin: 0px;
-    padding: 0px;
-    border: 0px none;
-    outline: 0px none;
-    font-weight: inherit;
-    font-style: inherit;
-    font-size: 100%;
-    font-family: inherit;
-    vertical-align: baseline;
-}
-
-span
-{
-margin: 0;
-padding: 0;
-border: 0;
-outline: 0;
-font-weight: inherit;
-font-style: inherit;
-font-size: 100%;
-font-family: inherit;
-vertical-align: baseline;
-}
-
-.dynatable-processing {
   background: #000;
   opacity: 0.6;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-.dynatable-processing span {
+
+.dynatable-processing span 
+{
   background: #FFF;
   border: solid 2px #57A957;
   color: #333;
@@ -102,6 +80,28 @@ vertical-align: baseline;
   font-size: 2em;
   box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
 }
+
 .dynatable-processing span img {
   vertical-align: middle;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.filter-header
+{
+  text-align: left;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  font-weight:  bold;
+}
+
+.filter-input
+{
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
 }

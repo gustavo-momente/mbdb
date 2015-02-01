@@ -1,114 +1,193 @@
-<html>
-<head>
-	<title>mvdb jQuery test</title>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="Gustavo">
+		<link rel="icon" href="../../favicon.ico">
+
+		<title>Simple Movie Database</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="dashboard.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="vendor/jquery.dynatable.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+		<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="https://github.com/gustavo-momente/mvdb" title="GitHub repo"><img class="navbar-brand" src="images/GitHub.png"></a>
+					<a class="navbar-brand" href="#">mvdb</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-left">
+<!-- 						<li><a href="#">Dashboard</a></li>
+						<li><a href="#">Settings</a></li>
+						<li><a href="#">Profile</a></li> -->
+						<!-- <li><a href="https://github.com/gustavo-momente/mvdb"><img src="images/GitHub.png" style="max-height: 20px"></a></li> -->
+					</ul>
+					<form class="navbar-form navbar-right">
+						<input id='search' type="text" class="form-control" placeholder="Search...">
+					</form>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 col-md-2 sidebar">
+
+					<ul class="nav nav-sidebar">
+						<li class="filter-header">Max Runtime: </li>
+						<li class="filter-input"><input id='max-run' type="number" min="0" step="10" class="form-control" placeholder="Max runtime..."></li>		
+					</ul>
+					
+					<ul class="nav nav-sidebar">
+						<li class="filter-header">Min Rating: </li>
+						<li class="filter-input"><input id='min-rating' type="number" min="0" max="10" step="0.5" class="form-control" placeholder="Min rating..."></li>		
+					</ul>
 	
-	<script type="text/javascript" src="vendor/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript" src="vendor/jquery.dynatable.js"></script>
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap-2.3.2.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/jquery.dynatable.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+					<ul class="nav nav-sidebar">
+						<li class="filter-header">Watched: </li>
+						<li class="filter-input">
+							<select id="watched" name="watched" class="form-control">
+								<option  selected="selected"></option>
+							  <option>True</option>
+							  <option>False</option>
+							</select>
+						</li>		
+					</ul>
+				</div>
 
-    <script type="text/javascript">
-	function ulReader(index, li, record) {
-	  // record.thumbnail = $li.find('.thumbnail-image').html();
-	  // record.caption = $caption.html();
-	  // record.label = $caption.find('h3').text();
-	  // record.description = $caption.find('p').text();
-	  // record.color = $li.data('color');
-	  console
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+					<!-- <h1 class="page-header">Dashboard</h1> -->
 
-    </script>
-    <!-- <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/application.css" /> -->
-    <!-- <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/pygments.css" /> -->
-<!--     <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/share.css" />
- --> 	
-</head>
+<!-- 					<div class="row placeholders">
+						<div class="col-xs-6 col-sm-3 placeholder">
+							<img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+							<h4>Label</h4>
+							<span class="text-muted">Something else</span>
+						</div>
+						<div class="col-xs-6 col-sm-3 placeholder">
+							<img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+							<h4>Label</h4>
+							<span class="text-muted">Something else</span>
+						</div>
+						<div class="col-xs-6 col-sm-3 placeholder">
+							<img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+							<h4>Label</h4>
+							<span class="text-muted">Something else</span>
+						</div>
+						<div class="col-xs-6 col-sm-3 placeholder">
+							<img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+							<h4>Label</h4>
+							<span class="text-muted">Something else</span>
+						</div>
+					</div> -->
 
-<body>
-	<div id="movdb">
-		<span id="runtime-filter">
-			Max runtime (min):
-			<input id="max-price" type="number" step="10" min="0" data-dynatable-query="max-price" style="height: 30px;"></input>
-		</span>
-		<table id="my-tab" class="table table-bordered">
-			<thead>
-		    	<th data-dynatable-column="movieLink">Movie</th>
-		    	<!-- <th>movie Imdb</th> -->
-		    	<!-- <th>id</th> -->
-		    	<th>Rating</th>
-		    	<th data-dynatable-column="runtime">Runtime (min)</th>
+					<!-- <h2 class="sub-header">Section title</h2> -->
+					<div class="table-responsive">
+						<!-- <table class="table table-striped"> -->
 
-		    	<!-- <th>Width</th> -->
-		    	<!-- <th>Height</th> -->
-		    	<th data-dynatable-column="bitrateKbps">bitrate (kbps)</th>
-		    	<!-- <th>Format</th> -->
-		    	<!-- <th>Release Group</th> -->
-		    	<th>File Type</th>
-		    	<th>File Size</th>
-		  	</thead>
-		  	
-		  	<tbody></tbody>
-		</table>
-	</div>
-	<script type="text/javascript">
+						<table id="my-tab" class="table table-striped">
+							<thead>
+								<th data-dynatable-column="movieLink">Movie</th>
+								<!-- <th>movie Imdb</th>
+								<!-- <th>id</th> -->
+								<th>Rating</th>
+								<th data-dynatable-column="runtime">Runtime (min)</th>
+								<!-- <th>Width</th> -->
+								<!-- <th>Height</th> -->
+								<th data-dynatable-column="bitrateKbps">bitrate (kbps)</th>
+								<!-- <th>Format</th> -->
+								<!-- <th>Release Group</th> -->
+								<th>File Type</th>
+								<th>File Size</th>
+							</thead>	
+							<tbody></tbody>
+						</table>
 
-		var mv_db_raw = $.ajax({
-		dataType: "json",
-		url: "json_data/mvdata.json",
-		mimeType: "application/json",
-		success: function(result)
-			{
-				console.log( "success" );
-				$('#my-tab').bind(
-  					'dynatable:init', function(e, dynatable) 
-					{
-						dynatable.queries.functions['max-price'] = function(record, queryValue) 
-						{
-        					return record.runtime <= parseFloat(queryValue);
-        				};
-        			})
-				.dynatable(
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script type="text/javascript" src="vendor/jquery.dynatable.js"></script>
+		<script type="text/javascript">
+			var mv_db_raw = $.ajax({
+			dataType: "json",
+			url: "json_data/mvdata.json",
+			mimeType: "application/json",
+			success: function(result)
 				{
-					dataset: { records: result},
-					features: {
-						paginate: true,
-						recordCount: true,
-						sorting: true,
-						search: true
-					},
-					inputs: {
-						queries: $('#max-price'),
-						processingText: 'Loading <img src="/images/loading.gif" />'
-					}
-				});
-			}
-		});
-		console.log( "success 2" );
-// $('#search-function-example').bind(
-//   'dynatable:init', function(e, dynatable) 
-//   {
-//     dynatable.queries.functions['max-price'] = function(record, queryValue) 
-//       {
-//         return parseFloat(record.price.replace(/,/,'')) <= parseFloat(queryValue);
-//       };
-//   })
-// .dynatable({
-// 	features: {
-// 		paginate: false,
-// 		recordCount: false,
-// 		sorting: false,
-// 		search: false
-//   },
-//   inputs: {
-//     queries: $('#max-price')
-//   }
-// });
+					console.log( "success" );
+					$('#my-tab').bind(
+							'dynatable:init', function(e, dynatable) 
+						{
+							dynatable.queries.functions['min-rating'] = function(record, queryValue) 
+							{
+								return record.rating >= parseFloat(queryValue);
+							};
+							dynatable.queries.functions['max-run'] = function(record, queryValue) 
+							{
+								return record.runtime <= parseFloat(queryValue);
+							};
+							dynatable.queries.functions['watched'] = function(record, queryValue) 
+							{
+								var parse1 = queryValue == "True";
+								var return_ = (record.watched == parse1);
+								return return_;
+							};
+								})
+					.dynatable(
+					{
+						dataset: { records: result, perPageDefault: 20},
+						features: {
+							paginate: true,
+							recordCount: true,
+							sorting: true,
+							search: false
+						},
+						inputs: {
+							queries: $('#search, #min-rating, #max-run, #watched'),
+							processingText: 'Loading <img src="images/loading.gif" />'
+						}
+					});
+				// $("#dynatable-per-page-my-tab").addClass("form-control");
+				}
+			});
+			console.log( "success 2" );
+		</script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
 
-
-	</script>
-
-
-
-</body>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+	</body>
 </html>
-
